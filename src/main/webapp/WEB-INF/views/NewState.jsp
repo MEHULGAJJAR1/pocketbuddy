@@ -7,12 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>Login</h2>
-	<br><br> 
+ 
+ 	<form action="savestate" method="post">
+		StateName : <input type="text" name="stateName"/><br><Br> 
+		<input type="submit" value="Save State"/>
 	
-	<a href="signup">Signup</a> 
-	<a href="forgetpassword">ForgetPassword?</a> 
-	
+	</form>
 
 </body>
 </html>

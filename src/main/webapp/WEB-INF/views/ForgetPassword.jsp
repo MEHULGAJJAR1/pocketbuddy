@@ -7,11 +7,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>Login</h2>
-	<br><br> 
+	<h2>ForgetPassword</h2>
+<form action="sendOtp" method="post">
+	 
+		
+		Email: <input type="text" name="email"/><br><br> 
+		
+ 
+		<input type="submit" value="Help Me!"/>
 	
-	<a href="signup">Signup</a> 
-	<a href="forgetpassword">ForgetPassword?</a> 
+	</form>
+
+<a href="login">Login</a>
 	
 
 </body>

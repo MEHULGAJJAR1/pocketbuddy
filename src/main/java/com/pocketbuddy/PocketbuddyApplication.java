@@ -1,4 +1,4 @@
-package com.pocketbuddy.controller;
+package com.pocketbuddy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
