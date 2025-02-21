@@ -2,6 +2,7 @@ package com.pocketbuddy.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -10,12 +11,12 @@ import jakarta.persistence.Table;
 public class VehicleEntity {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer vehicleId;
 	private Integer userId;
 	private String parkingCode;
 	private String vehicleNo;
-	private Integer vehicleType;
+	private String vehicleType;
 	public Integer getVehicleId() {
 		return vehicleId;
 	}
@@ -40,12 +41,15 @@ public class VehicleEntity {
 	public void setVehicleNo(String vehicleNo) {
 		this.vehicleNo = vehicleNo;
 	}
-	public Integer getVehicleType() {
+	public String getVehicleType() {
 		return vehicleType;
 	}
-	public void setVehicleType(Integer vehicleType) {
+	public void setVehicleType(String vehicleType) {
 		this.vehicleType = vehicleType;
 	}
+
+	
+
 	
 
 }

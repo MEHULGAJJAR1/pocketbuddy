@@ -1,7 +1,9 @@
 package com.pocketbuddy.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +15,9 @@ import com.pocketbuddy.service.MailServices;
 @Controller
 public class SessionController {
 	
+	
+	@Autowired
+	PasswordEncoder encoder;
 	@Autowired
 	MailServices serviceMail;
 	
@@ -30,15 +35,15 @@ public class SessionController {
 	@PostMapping ("saveuser")
 		public String saveuser(UserEntity userEntity){
 		
-		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(5); //salt
+//		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(5); //salt
 		String encPassword = encoder.encode(userEntity.getPassword());
 		
 		userEntity.setPassword(encPassword);
 		
 		userEntity.setRole("USER");
 		repositoryUser.save(userEntity);
-		serviceMail.sendWelcomeMail(userEntity.getEmail(), userEntity.getFirstname());
 		
+		  serviceMail.sendWelcomeMail(userEntity.getEmail(), userEntity.getFirstname());	
 			return "Login";
 	}
 	 @GetMapping("/forgetepassword")

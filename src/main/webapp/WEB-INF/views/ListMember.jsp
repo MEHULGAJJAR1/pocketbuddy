@@ -14,7 +14,7 @@
 	<h2>List Member</h2>
 
 	<table border="1">
-		<c:forEach items="${memberList}" var="m">
+		<c:forEach items="${memberlist}" var="m">
 
 			<tr>
 				<td>${m.memberName }</td>
@@ -22,7 +22,6 @@
 				<td>${m.profilePhoto }</td>
 			</tr>
 		</c:forEach>
-	</table>
 
 </body>
 </html>
