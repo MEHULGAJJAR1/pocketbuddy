@@ -1,9 +1,6 @@
 package com.pocketbuddy.controller;
 
 import java.util.List;
-
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,7 +25,7 @@ public class VehicleController {
 	@PostMapping("savevehicle")
 	public String saveVehicle(VehicleEntity entityvehicle) {
 		repositoryVehicle.save(entityvehicle);	
-		return "ListVehicle";
+		return "redirect:/listvehicle";
 	}
 	
 	@GetMapping("listvehicle")
